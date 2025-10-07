@@ -13,12 +13,13 @@ const app = express();
 
 app.use(cors({
   origin: [
-    'http://localhost:5173',           // za lokalni razvoj
-    'https://smarthabit-backend.onrender.com' // tvoja Vercel domena
+    'http://localhost:5173',                // za lokalni razvoj
+    'https://smart-habit-z44i.vercel.app',  // tvoj frontend na Vercelu
   ],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
 }));
-
 app.use(express.json());
 
 // Routes
