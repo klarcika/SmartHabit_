@@ -53,7 +53,7 @@
 ```bash
 json-server --watch db.json --port 3001
 ```
-### 2. Backend (npr. Live server ali http server)
+### 2. Frontend (npr. Live server ali http server)
 ```bash
 npx http-server . -p 5500
 ```
