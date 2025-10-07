@@ -11,7 +11,7 @@ function Milestones() {
     const [milestones, setMilestones] = useState([]);
     const [error, setError] = useState(null);
     const [isOnline, setIsOnline] = useState(navigator.onLine);
-      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000';
+      const API_URL = import.meta.env.VITE_API_URL || 'https://smarthabit.onrender.com/';
 
     useEffect(() => {
         const handleOnline = async () => {

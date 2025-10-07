@@ -16,7 +16,7 @@ function Habit() {
     const [filterCategory, setFilterCategory] = useState('');
     const [isOnline, setIsOnline] = useState(navigator.onLine);
     const userId = user?.id;
-    const API_URL = process.env.VITE_API_URL || 'http://localhost:4000';
+    const API_URL = process.env.VITE_API_URL || 'https://smarthabit-backend.onrender.com';
     console.log("API_URL:", API_URL);
 
     useEffect(() => {

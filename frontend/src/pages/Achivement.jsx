@@ -44,7 +44,7 @@ function Achievements() {
         }
 
         const token = await getToken();
-        const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000';
+        const API_URL = import.meta.env.VITE_API_URL || 'https://smarthabit.onrender.com/';
 
         try {
             const habitsResponse = await axios.get(`${API_URL}/api/habits/`, {

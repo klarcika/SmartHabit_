@@ -6,7 +6,7 @@ import './Homepage.css';
 function HomePage() {
   const { user } = useUser();
   const { getToken, isSignedIn } = useAuth();
-    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000';
+    const API_URL = import.meta.env.VITE_API_URL || 'https://smarthabit.onrender.com/';
 
   useEffect(() => {
     const fetchUser = async () => {
