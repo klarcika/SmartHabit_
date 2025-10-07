@@ -13,7 +13,7 @@ const app = express();
 
 app.use(cors({
   origin: [
-    'http://localhost:5173',                // za lokalni razvoj
+   //'http://localhost:5173',                // za lokalni razvoj
     'https://smart-habit.vercel.app/'
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
