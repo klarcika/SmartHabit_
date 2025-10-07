@@ -1,12 +1,12 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useEffect } from 'react';
-import HomePage from './pages/HomePage';
-import ProfilePage from './pages/ProfilePage';
-import Header from "./pages/Header.jsx";
-import Habits from "./pages/Habits.jsx";
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Achievements from "./pages/Achivement.jsx";
+import Habits from "./pages/Habits.jsx";
+import Header from "./pages/Header.jsx";
+import HomePage from './pages/HomePage';
+import Leaderboard from "./pages/Leaderboard.jsx";
 import Milestones from "./pages/Milestone.jsx";
-import Leaderboard from "./pages/leaderboard.jsx";
+import ProfilePage from './pages/ProfilePage';
 
 function App() {
 useEffect(() => {
