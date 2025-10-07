@@ -15,6 +15,7 @@ function ProfilePage() {
   const [habitDateMap, setHabitDateMap] = useState({});
   const [habitColorMap, setHabitColorMap] = useState({});
   const [isOnline, setIsOnline] = useState(navigator.onLine);
+  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000';
 
   useEffect(() => {
     const handleOnline = async () => {
@@ -45,14 +46,14 @@ function ProfilePage() {
 
     try {
       if (isOnline) {
-        const response = await axios.get("https://smarthabit-backend.onrender.com/api/users/", {
-          headers: { Authorization: `Bearer ${token}` },
-        });
+        const response = await axios.get(`${API_URL}/api/users/`, {
+  headers: { Authorization: `Bearer ${token}` },
+});
         setUserData(response.data);
       } else {
         await queueRequest({
           method: 'GET',
-          url: "https://smarthabit-backend.onrender.com/api/users/",
+          url: `${API_URL}/api/users/`,
           headers: { Authorization: `Bearer ${token}` },
         });
         if ('serviceWorker' in navigator && 'SyncManager' in window) {
@@ -72,9 +73,9 @@ function ProfilePage() {
 
     try {
       if (isOnline) {
-        const response = await axios.get("https://smarthabit-backend.onrender.com/api/habits", {
-          headers: { Authorization: `Bearer ${token}` },
-        });
+        const response = await axios.get(`${API_URL}/api/habits/`, {
+  headers: { Authorization: `Bearer ${token}` },
+});
 
         const habits = response.data;
         setHabits(habits);
@@ -99,7 +100,7 @@ function ProfilePage() {
       } else {
         await queueRequest({
           method: 'GET',
-          url: "https://smarthabit-backend.onrender.com/api/habits",
+          url: `${API_URL}/api/habits/`,
           headers: { Authorization: `Bearer ${token}` },
         });
         if ('serviceWorker' in navigator && 'SyncManager' in window) {

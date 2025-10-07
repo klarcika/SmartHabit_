@@ -11,6 +11,7 @@ function Milestones() {
     const [milestones, setMilestones] = useState([]);
     const [error, setError] = useState(null);
     const [isOnline, setIsOnline] = useState(navigator.onLine);
+      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000';
 
     useEffect(() => {
         const handleOnline = async () => {
@@ -36,7 +37,7 @@ function Milestones() {
 
         try {
             if (isOnline) {
-                const response = await axios.get("https://smarthabit-backend.onrender.com/api/milestones", {
+                const response = await axios.get(`${API_URL}/api/milestones`, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
@@ -45,7 +46,7 @@ function Milestones() {
             } else {
                 await queueRequest({
                     method: 'GET',
-                    url: "https://smarthabit-backend.onrender.com/api/milestones",
+                    url: `${API_URL}/api/milestones`,
                     headers: { Authorization: `Bearer ${token}` },
                 });
                 if ('serviceWorker' in navigator && 'SyncManager' in window) {

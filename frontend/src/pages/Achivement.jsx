@@ -44,16 +44,17 @@ function Achievements() {
         }
 
         const token = await getToken();
+        const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000';
 
         try {
-            const habitsResponse = await axios.get("https://smarthabit-backend.onrender.com/api/habits", {
-                headers: { Authorization: `Bearer ${token}` }
-            });
+            const habitsResponse = await axios.get(`${API_URL}/api/habits/`, {
+  headers: { Authorization: `Bearer ${token}` },
+});
             setHabits(habitsResponse.data);
 
-            const achievementsResponse = await axios.get("https://smarthabit-backend.onrender.com/api/achievements", {
-                headers: { Authorization: `Bearer ${token}` }
-            });
+            const achievementsResponse = await axios.get(`${API_URL}/api/achievements`, {
+  headers: { Authorization: `Bearer ${token}` },
+});
 
             setAchievements(achievementsResponse.data);
 
@@ -74,7 +75,7 @@ function Achievements() {
 
     const handleAddProgress = async (habitId) => {
         const token = await getToken();
-        const url = "https://smarthabit-backend.onrender.com/api/achievements";
+        const url = "http://localhost:4000/api/achievements";
         const newAchievementData = { habit: habitId };
 
         try {
@@ -121,7 +122,7 @@ function Achievements() {
 
     const handleRemoveProgress = async (achievementId) => {
         const token = await getToken();
-        const url = `https://smarthabit-backend.onrender.com/api/achievements/${achievementId}`;
+        const url = `http://localhost:4000/api/achievements/${achievementId}`;
 
         try {
             if (isOnline) {

@@ -9,6 +9,7 @@ function LeaderboardMilestone() {
   const [leaders, setLeaders] = useState([]);
   const [error, setError] = useState(null);
   const [isOnline, setIsOnline] = useState(navigator.onLine); // Track online/offline status
+    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000';
 
   // Load cached data from localStorage on mount
   useEffect(() => {
@@ -49,7 +50,7 @@ function LeaderboardMilestone() {
 
     const token = await getToken();
     try {
-      const res = await axios.get('https://smarthabit-backend.onrender.com/api/leaderboard/milestone', {
+      const res = await axios.get(`${API_URL}/api/leaderboard/milestone`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setLeaders(res.data);

@@ -16,6 +16,7 @@ function Habit() {
     const [filterCategory, setFilterCategory] = useState('');
     const [isOnline, setIsOnline] = useState(navigator.onLine);
     const userId = user?.id;
+    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000';
 
     useEffect(() => {
         const handleOnline = async () => {
@@ -41,7 +42,7 @@ function Habit() {
 
         try {
             if (isOnline) {
-                const response = await axios.get("https://smarthabit-backend.onrender.com/api/habits", {
+                const response = await axios.get(`${API_URL}/api/habits`, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
@@ -50,7 +51,7 @@ function Habit() {
             } else {
                 await queueRequest({
                     method: 'GET',
-                    url: "https://smarthabit-backend.onrender.com/api/habits",
+                    url: `${API_URL}/api/habits`,
                     headers: { Authorization: `Bearer ${token}` },
                 });
                 if ('serviceWorker' in navigator && 'SyncManager' in window) {
@@ -82,7 +83,7 @@ function Habit() {
             goal: formData.get('goal'),
             user: userId,
         };
-        const url = isEditing ? `https://smarthabit-backend.onrender.com/api/habits/${currentHabit._id}` : "https://smarthabit-backend.onrender.com/api/habits";
+        const url = isEditing ? `${API_URL}/api/habits/${currentHabit._id}` : `${API_URL}/api/habits`;
         const method = isEditing ? 'PUT' : 'POST';
 
         try {
@@ -140,7 +141,7 @@ function Habit() {
         if (!isSignedIn) return;
 
         const token = await getToken();
-        const url = `https://smarthabit-backend.onrender.com/api/habits/${habitId}`;
+        const url = `${API_URL}/api/habits/${habitId}`;
 
         try {
             if (isOnline) {

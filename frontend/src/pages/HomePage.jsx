@@ -6,6 +6,7 @@ import './Homepage.css';
 function HomePage() {
   const { user } = useUser();
   const { getToken, isSignedIn } = useAuth();
+    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000';
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -15,7 +16,7 @@ function HomePage() {
       console.log("TOKEN:", token);
 
       try {
-        const response = await axios.get("https://smarthabit-backend.onrender.com/api/users/", {
+        const response = await axios.get(`${API_URL}/api/users/`, {
           headers: {
             Authorization: `Bearer ${token}`
           },
