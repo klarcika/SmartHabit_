@@ -1,0 +1,7 @@
+Zaganjanje frontenda:
+    - cd frontend
+    - npm run dev
+
+Zaganjanje backenda:
+    - cd backend
+    - node app.js

@@ -1,0 +1,154 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background-color: rgba(30, 41, 59, 0.95); /* Temno modro-sivo ozadje z rahlo prosojnostjo */
+  padding: 0.6rem 0;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Mehkejša senca */
+  backdrop-filter: blur(8px); /* Prosojen učinek (podpora v modernih brskalnikih) */
+}
+
+.navbar-content {
+  max-width: 1280px; /* Malo širše za bolj prostoren videz */
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-left {
+  justify-content: flex-start;
+}
+
+.navbar-center {
+  justify-content: center;
+  gap: 2.5rem; /* Malo večji razmik za bolj zračen videz */
+}
+
+.navbar-right {
+  justify-content: flex-end;
+  gap: 1.2rem; /* Malo večji razmik */
+}
+
+.logo {
+  font-size: 1.8rem; /* Malo večji logo */
+  font-weight: 700;
+  color: #60a5fa; /* Svetlejša modra za logo */
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.logo:hover {
+  color: #93c5fd; /* Svetlejša modra ob hoverju */
+}
+
+.navbar a {
+  color: #d1d5db; /* Svetlo siva za povezave */
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar a:hover {
+  color: #60a5fa; /* Modra ob hoverju */
+  transform: translateY(-2px); /* Subtilen dvig ob hoverju */
+}
+
+.navbar a.active {
+  color: #60a5fa; /* Modra za aktivno povezavo */
+  font-weight: 600;
+  text-decoration: none; /* Odstranimo podčrtaj za bolj eleganten videz */
+  border-bottom: 2px solid #60a5fa; /* Dodamo spodnjo obrobo za aktivno stanje */
+}
+
+.greeting {
+  color: #e5e7eb; /* Svetlo siva za pozdrav */
+  font-size: 1rem;
+  white-space: nowrap;
+  font-weight: 400;
+}
+
+.avatar {
+  width: 38px; /* Malo večji avatar */
+  height: 38px;
+  border-radius: 50%;
+  border: 2px solid #60a5fa; /* Modra obroba */
+  object-fit: cover;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.avatar:hover {
+  transform: scale(1.1); /* Rahlo povečanje ob hoverju */
+  border-color: #93c5fd; /* Svetlejša modra ob hoverju */
+}
+
+.logout-button {
+  background: none;
+  border: none;
+  color: #e5e7eb; /* Svetlo siva */
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.logout-button:hover {
+  color: #f87171; /* Svetlo rdeča ob hoverju */
+  transform: scale(1.1); /* Rahlo povečanje ob hoverju */
+}
+
+.login-button {
+  background-color: #60a5fa; /* Modra za gumb */
+  border: none;
+  padding: 0.6rem 1.2rem; /* Malo večji padding */
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.login-button:hover {
+  background-color: #3b82f6; /* Temnejša modra ob hoverju */
+  transform: translateY(-2px); /* Subtilen dvig ob hoverju */
+}
+
+.login-button:active {
+  transform: translateY(0); /* Ob pritisku se vrne nazaj */
+}
+
+.voice-button {
+  background-color: #f3f4f6; /* Svetlo sivo ozadje za ikono mikrofona */
+  border: 2px solid #60a5fa; /* Modra obroba */
+  border-radius: 50%; /* Okrogel gumb */
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+}
+
+.voice-button:hover {
+  background-color: #e5e7eb; /* Malo temnejše ozadje ob hoverju */
+  border-color: #93c5fd; /* Svetlejša modra obroba */
+  transform: scale(1.1); /* Rahlo povečanje ob hoverju */
+}
+
+.voice-button:active {
+  transform: scale(0.95); /* Rahlo pomanjšanje ob kliku */
+}

@@ -1,0 +1,45 @@
+.leaderboard-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #1f1f1f;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+  color: #f1f1f1;
+}
+
+.leaderboard-title {
+  font-size: 2rem;
+  color: #4f8bff;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #444;
+}
+
+.leaderboard-table th {
+  background-color: #2b2b2b;
+  color: #f8f8f8;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.leaderboard-table tr:nth-child(even) {
+  background-color: #2a2a2a;
+}
+
+.leaderboard-rank {
+  font-weight: bold;
+  color: #ffd700;
+}
+

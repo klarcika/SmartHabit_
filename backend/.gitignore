@@ -1,0 +1,21 @@
+# Ignoriraj node_modules mapo
+node_modules/
+
+# Ignoriraj log datoteke
+*.log
+
+# Ignoriraj okoljske datoteke, ki so specifične za razvojne nastavitve
+.env
+
+# Ignoriraj npm pakete, ki so specifični za točno različico sistema
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Ignoriraj mapo s prijavljenimi podatki
+.DS_Store
+
+# Ignoriraj mapo s testnimi podatki (če uporabljate testni framework)
+coverage/
+
+# Ignoriraj druge specifične datoteke, če je potrebno

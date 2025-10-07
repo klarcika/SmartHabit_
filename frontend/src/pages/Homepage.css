@@ -1,0 +1,70 @@
+/* Ensure the page takes full height and centers content */
+.page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    width: 100%;
+    padding-top: 20px;
+    background-color: #f3f4f6;  /*Light gray background */
+}
+
+/* Card styling with white background and black text */
+.card-container {
+    background-color: #1f1f1f;
+    color: #ffffff;
+    max-width: 600px;
+    width: 100%;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Styling for the SignInButton */
+.sign-in-button {
+    width: 100%;
+    background-color: #2563eb;
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.sign-in-button:hover {
+    background-color: #1d4ed8;
+}
+
+/* Text styling */
+.greeting {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 16px;
+}
+
+.section-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.quote {
+    font-style: italic;
+    margin-bottom: 16px;
+    color: #ffffff;
+    font-size: 24px;
+}
+
+.description-title {
+    font-size: 25px;
+    font-weight: 600;
+    margin-top: 16px;
+}
+
+.description {
+    color: #ffffff;
+}

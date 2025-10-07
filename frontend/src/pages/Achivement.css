@@ -1,0 +1,21 @@
+.add-button {
+    background-color: #2563eb;
+    border: 0;
+    border-radius: 10px;
+}
+
+.add-button:hover {
+    background-color: #1d4ed8;
+}
+
+.delete-button {
+    background-color: #dc2626;
+    border: 0;
+    border-radius: 10px;
+}
+
+.delete-button:hover {
+    background-color: #b91c1c;
+    border: 0;
+    border-radius: 10px;
+}
