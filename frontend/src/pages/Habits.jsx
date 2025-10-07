@@ -17,6 +17,7 @@ function Habit() {
     const [isOnline, setIsOnline] = useState(navigator.onLine);
     const userId = user?.id;
     const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000';
+    console.log("API_URL:", API_URL);
 
     useEffect(() => {
         const handleOnline = async () => {
