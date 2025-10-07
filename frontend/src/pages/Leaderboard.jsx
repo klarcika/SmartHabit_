@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react';
 import { useAuth } from '@clerk/clerk-react';
 import axios from 'axios';
+import { useEffect, useState } from 'react';
 import { syncRequests } from './../offlineSync'; // Import offlineSync
-import './leaderboard.css';
+import './Leaderboard.css';
 
 function LeaderboardMilestone() {
   const { getToken, isSignedIn } = useAuth();
