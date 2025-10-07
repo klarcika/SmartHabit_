@@ -14,7 +14,8 @@ const app = express();
 app.use(cors({
   origin: [
     'http://localhost:5173',                // za lokalni razvoj
-    'https://smart-habit-z44i.vercel.app',  // tvoj frontend na Vercelu
+    'https://smart-habit-z44i.vercel.app', 
+    'https://smart-habit-z44i-git-main-klarcikas-projects.vercel.app/' 
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
