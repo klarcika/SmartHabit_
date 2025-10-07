@@ -45,14 +45,14 @@ function ProfilePage() {
 
     try {
       if (isOnline) {
-        const response = await axios.get("http://localhost:4000/api/users/", {
+        const response = await axios.get("https://smarthabit-backend.onrender.com/api/users/", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setUserData(response.data);
       } else {
         await queueRequest({
           method: 'GET',
-          url: "http://localhost:4000/api/users/",
+          url: "https://smarthabit-backend.onrender.com/api/users/",
           headers: { Authorization: `Bearer ${token}` },
         });
         if ('serviceWorker' in navigator && 'SyncManager' in window) {
@@ -72,7 +72,7 @@ function ProfilePage() {
 
     try {
       if (isOnline) {
-        const response = await axios.get("http://localhost:4000/api/habits", {
+        const response = await axios.get("https://smarthabit-backend.onrender.com/api/habits", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -99,7 +99,7 @@ function ProfilePage() {
       } else {
         await queueRequest({
           method: 'GET',
-          url: "http://localhost:4000/api/habits",
+          url: "https://smarthabit-backend.onrender.com/api/habits",
           headers: { Authorization: `Bearer ${token}` },
         });
         if ('serviceWorker' in navigator && 'SyncManager' in window) {

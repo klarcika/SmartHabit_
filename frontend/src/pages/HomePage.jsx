@@ -15,7 +15,7 @@ function HomePage() {
       console.log("TOKEN:", token);
 
       try {
-        const response = await axios.get("http://localhost:4000/api/users/", {
+        const response = await axios.get("https://smarthabit-backend.onrender.com/api/users/", {
           headers: {
             Authorization: `Bearer ${token}`
           },

@@ -49,7 +49,7 @@ function LeaderboardMilestone() {
 
     const token = await getToken();
     try {
-      const res = await axios.get('http://localhost:4000/api/leaderboard/milestone', {
+      const res = await axios.get('https://smarthabit-backend.onrender.com/api/leaderboard/milestone', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setLeaders(res.data);

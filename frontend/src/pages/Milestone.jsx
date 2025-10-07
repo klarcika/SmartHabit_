@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
 import { useAuth } from '@clerk/clerk-react';
 import axios from 'axios';
-import { queueRequest, syncRequests } from "./../offlineSync.js";
+import { useEffect, useState } from 'react';
 import { FaMedal } from "react-icons/fa";
+import { queueRequest, syncRequests } from "./../offlineSync.js";
 import './Habits.css';
 import './Milestone.css';
 
@@ -36,7 +36,7 @@ function Milestones() {
 
         try {
             if (isOnline) {
-                const response = await axios.get("http://localhost:4000/api/milestones", {
+                const response = await axios.get("https://smarthabit-backend.onrender.com/api/milestones", {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
@@ -45,7 +45,7 @@ function Milestones() {
             } else {
                 await queueRequest({
                     method: 'GET',
-                    url: "http://localhost:4000/api/milestones",
+                    url: "https://smarthabit-backend.onrender.com/api/milestones",
                     headers: { Authorization: `Bearer ${token}` },
                 });
                 if ('serviceWorker' in navigator && 'SyncManager' in window) {

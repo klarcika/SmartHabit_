@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
 import { useAuth } from '@clerk/clerk-react';
 import axios from 'axios';
-import { queueRequest, syncRequests } from './../offlineSync'; // Import offlineSync
-import './Habits.css';
-import './Achivement.css';
+import { useEffect, useState } from 'react';
 import { FaAward } from 'react-icons/fa';
+import { queueRequest, syncRequests } from './../offlineSync'; // Import offlineSync
+import './Achivement.css';
+import './Habits.css';
 
 function Achievements() {
     const { getToken, isSignedIn } = useAuth();
@@ -46,12 +46,12 @@ function Achievements() {
         const token = await getToken();
 
         try {
-            const habitsResponse = await axios.get("http://localhost:4000/api/habits", {
+            const habitsResponse = await axios.get("https://smarthabit-backend.onrender.com/api/habits", {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setHabits(habitsResponse.data);
 
-            const achievementsResponse = await axios.get("http://localhost:4000/api/achievements", {
+            const achievementsResponse = await axios.get("https://smarthabit-backend.onrender.com/api/achievements", {
                 headers: { Authorization: `Bearer ${token}` }
             });
 
@@ -74,7 +74,7 @@ function Achievements() {
 
     const handleAddProgress = async (habitId) => {
         const token = await getToken();
-        const url = "http://localhost:4000/api/achievements";
+        const url = "https://smarthabit-backend.onrender.com/api/achievements";
         const newAchievementData = { habit: habitId };
 
         try {
@@ -121,7 +121,7 @@ function Achievements() {
 
     const handleRemoveProgress = async (achievementId) => {
         const token = await getToken();
-        const url = `http://localhost:4000/api/achievements/${achievementId}`;
+        const url = `https://smarthabit-backend.onrender.com/api/achievements/${achievementId}`;
 
         try {
             if (isOnline) {

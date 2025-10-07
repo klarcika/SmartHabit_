@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
 import { useAuth, useUser } from '@clerk/clerk-react';
 import axios from 'axios';
+import { useEffect, useState } from 'react';
 import { FaListAlt } from 'react-icons/fa';
 import { queueRequest, syncRequests } from "./../offlineSync.js";
 import './Habits.css';
@@ -41,7 +41,7 @@ function Habit() {
 
         try {
             if (isOnline) {
-                const response = await axios.get("http://localhost:4000/api/habits", {
+                const response = await axios.get("https://smarthabit-backend.onrender.com/api/habits", {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
@@ -50,7 +50,7 @@ function Habit() {
             } else {
                 await queueRequest({
                     method: 'GET',
-                    url: "http://localhost:4000/api/habits",
+                    url: "https://smarthabit-backend.onrender.com/api/habits",
                     headers: { Authorization: `Bearer ${token}` },
                 });
                 if ('serviceWorker' in navigator && 'SyncManager' in window) {
@@ -82,7 +82,7 @@ function Habit() {
             goal: formData.get('goal'),
             user: userId,
         };
-        const url = isEditing ? `http://localhost:4000/api/habits/${currentHabit._id}` : "http://localhost:4000/api/habits";
+        const url = isEditing ? `https://smarthabit-backend.onrender.com/api/habits/${currentHabit._id}` : "https://smarthabit-backend.onrender.com/api/habits";
         const method = isEditing ? 'PUT' : 'POST';
 
         try {
@@ -140,7 +140,7 @@ function Habit() {
         if (!isSignedIn) return;
 
         const token = await getToken();
-        const url = `http://localhost:4000/api/habits/${habitId}`;
+        const url = `https://smarthabit-backend.onrender.com/api/habits/${habitId}`;
 
         try {
             if (isOnline) {
