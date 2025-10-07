@@ -15,7 +15,7 @@ function ProfilePage() {
   const [habitDateMap, setHabitDateMap] = useState({});
   const [habitColorMap, setHabitColorMap] = useState({});
   const [isOnline, setIsOnline] = useState(navigator.onLine);
-  const API_URL = import.meta.env.VITE_API_URL || 'https://smarthabit.onrender.com/';
+  const API_URL = import.meta.env.VITE_API_URL || 'https://smarthabit.onrender.com';
 
   useEffect(() => {
     const handleOnline = async () => {

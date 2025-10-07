@@ -9,7 +9,7 @@ function LeaderboardMilestone() {
   const [leaders, setLeaders] = useState([]);
   const [error, setError] = useState(null);
   const [isOnline, setIsOnline] = useState(navigator.onLine); // Track online/offline status
-    const API_URL = import.meta.env.VITE_API_URL || 'https://smarthabit.onrender.com/';
+    const API_URL = import.meta.env.VITE_API_URL || 'https://smarthabit.onrender.com';
 
   // Load cached data from localStorage on mount
   useEffect(() => {
